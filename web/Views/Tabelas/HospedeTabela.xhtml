@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../../CSS/estilo.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+     
+        <header>
+        <center>
+        <h1>Detalhes sobre Hospede</h1>
+        <br/>
+        <h3>Procura por um lugar para se hospedar? Estás na página certa</h3>
+        <br/>
+       <h:link value="Clique Aqui para voltar" outcome="/Views/Hospede.xhtml"/>
+        </center>
+        </header>
+        
+        <center>
+            <h1>Tabela de Hospedes</h1>
+            <h:dataTable border="1" value="#{hospedeDAO.listarHospedes}" var="hospedes">
+                <h:column>
+                    <f:facet name="header">Id do hospede</f:facet>
+                    #{hospedes.idHospede}
+                </h:column>
+     
+                <h:column>
+                    <f:facet name="header">Nome do Hospede</f:facet>
+                    #{hospedes.nomeHospede}
+                </h:column>
+     
+                <h:column>
+                    <f:facet name="header">Data de nascimento</f:facet>
+                    #{hospedes.nascimentoHospede}
+                </h:column>
+     
+                <h:column>
+                    <f:facet name="header">Endereço</f:facet>
+                    #{hospedes.enderecoHospede}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    #{hospedes.emailHospede}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Telefone</f:facet>
+                    #{hospedes.telefoneHospede}
+                </h:column>
+            </h:dataTable>
+            </center>
+        
+        <footer>
+            Sobre <br/>
+            Email: eugeniocachiombo@gmail.com <br/>
+            Telefone: 921439849
+        </footer>
+    </h:body>
+    
+   
+</html>
+
+

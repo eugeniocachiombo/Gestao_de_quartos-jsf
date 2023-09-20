@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../CSS/estilo.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    
+    <h:body>
+     
+        <header>
+        <center>
+        <h1>Detalhes sobre Quarto</h1>
+        <br/>
+        <h3>Procura por um lugar para se hospedar? Estás na página certa</h3>
+        <br/>
+        <h:link value="Clique Aqui para aceder a página inicial" outcome="/index.xhtml"/>
+        </center>
+        </header>
+        
+        <h:form>
+            
+            <center>
+                <br/> 
+            <h:outputText styleClass="mensagemSucesso" value="#{quartoDAO.mensagemSucesso}"/>
+            <h:outputText styleClass="mensagemErro" value="#{quartoDAO.mensagemError}"/> 
+            <br/> <br/>
+            
+            <h1>Cadastro de Quarto</h1>
+            <label styleClass="formulario"> <strong> Tipo de Quarto </strong> </label>
+            <h:selectOneMenu styleClass="formularioInput" value="#{quarto.tipoQuarto}" >
+                <f:selectItems value="#{quarto.listarTiposQuatos}" />
+            </h:selectOneMenu>
+            
+            <label styleClass="formulario"> <strong> Total de Hospedes </strong> </label>
+            <h:inputText styleClass="formularioInput" value="#{quarto.totalHospedes}"/> 
+            
+            <label styleClass="formulario"> <strong> Disponibilidade </strong> </label>
+            <h:selectOneMenu styleClass="formularioInput" value="#{quarto.disponibilidade}" >
+                <f:selectItems value="#{quarto.listarDisponibilidade}" />
+            </h:selectOneMenu>
+            
+            <label styleClass="formulario"> <strong> Recursos </strong> </label>
+            <h:selectOneMenu styleClass="formularioInput" value="#{quarto.recursos}" >
+                <f:selectItems value="#{quarto.listarRecursos}" />
+            </h:selectOneMenu>
+            
+            <div styleClass="Formulario">
+            <h:commandButton styleClass="btnsFormulario" value="Cadastrar Quarto" action="#{quartoDAO.InserirQuarto(quarto)}"/>
+            
+            <h:commandButton styleClass="btnsFormulario" value="Editar Quarto" action="Editar/EditarQuarto.xhtml"/>
+            
+            <h:commandButton styleClass="btnsFormulario" value="Visualizar Quartos" action="Tabelas/QuartoTabela.xhtml"/>
+            </div>
+            </center>
+        </h:form>
+       
+        <footer>
+            Sobre <br/>
+            Email: eugeniocachiombo@gmail.com <br/>
+            Telefone: 921439849
+        </footer>
+    </h:body>
+</html>
+

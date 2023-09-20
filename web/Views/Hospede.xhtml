@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../../CSS/estilo.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+     
+        <header>
+        <center>
+        <h1>Detalhes sobre Hospede</h1>
+        <br/>
+        <h3>Procura por um lugar para se hospedar? Estás na página certa</h3>
+        <br/>
+        <h:link value="Clique Aqui para aceder a página inicial" outcome="/index.xhtml"/>
+        </center>
+        </header>
+       
+        <h:form>
+            <center>
+                <br/> 
+            <h:outputText styleClass="mensagemSucesso" value="#{hospedeDAO.mensagemSucesso}"/>
+            <h:outputText styleClass="mensagemErro" value="#{hospedeDAO .mensagemError}"/> 
+            <br/> <br/>
+            
+            <h1>Cadastro de Hospede</h1>
+            <label styleClass="formulario" > <strong> Id do Hospede </strong> </label> 
+            <h:inputText styleClass="formularioInput" value="#{hospede.idHospede}"/>
+
+            <label styleClass="formulario" > <strong> Nome do Hospede </strong> </label> 
+            <h:inputText styleClass="formularioInput" value="#{hospede.nomeHospede}"/> 
+            
+            <label styleClass="formulario"> <strong> Data de Nascimento </strong> </label>
+            <h:inputText styleClass="formularioInput" value="#{hospede.nascimentoHospede}"/> 
+            
+            <label styleClass="formulario"> <strong> Endereço do Hospede </strong> </label>
+            <h:inputText styleClass="formularioInput" value="#{hospede.enderecoHospede}"/> 
+            
+            <label styleClass="formulario"> <strong> Email do Hospede </strong> </label>
+            <h:inputText styleClass="formularioInput" value="#{hospede.emailHospede}"/> 
+            
+            <label styleClass="formulario"> <strong> Número de Telefone </strong> </label>
+            <h:inputText styleClass="formularioInput" value="#{hospede.telefoneHospede}"/> 
+            
+            <div styleClass="Formulario">
+                <h:commandButton styleClass="btnsFormulario" value="Cadastrar Hospede" action="#{hospedeDAO.InserirHospede(hospede)}"/>
+            
+                <h:commandButton styleClass="btnsFormulario" value="Pesquisar Hospede" action="#{hospedeDAO.PesquisarHospede(hospede)}"/>
+            <br/> <br/>
+                <h:commandButton styleClass="btnsFormulario" value="Actualizar Hospede" action="#{hospedeDAO.ActualizarHospede(hospede)}"/>
+            
+                <h:commandButton styleClass="btnsFormulario" value="Excluir Hospede" action="#{hospedeDAO.ExcluirHospede(hospede)}"/>
+            
+                <h:commandButton styleClass="btnsFormulario" value="Visualizar Hospedes" action="Tabelas/HospedeTabela.xhtml"/>
+            
+            </div>
+            </center>
+        </h:form>
+        
+        <footer>
+            Sobre <br/>
+            Email: eugeniocachiombo@gmail.com <br/>
+            Telefone: 921439849
+        </footer>
+    </h:body>
+    
+   
+</html>
+
+
